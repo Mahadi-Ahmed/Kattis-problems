@@ -12,8 +12,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="F2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/F2.java">
+      <file leaf-file-name="R2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/R2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
@@ -41,7 +41,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/F2.java" />
+        <option value="$PROJECT_DIR$/src/R2.java" />
       </list>
     </option>
   </component>
@@ -69,8 +69,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="F2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="F2" type="462c0819:PsiDirectoryNode" />
+              <item name="R2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="R2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
