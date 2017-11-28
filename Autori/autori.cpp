@@ -17,8 +17,6 @@ int main(){
 		if (upperOrNot != 0){
 			autoriNames += inputNames[i];
 		}
-
-
 	}
 	std::cout << autoriNames;
 	return 0;
