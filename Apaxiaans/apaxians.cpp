@@ -1,5 +1,5 @@
 /*
-	Open kattis problem Autori: https://open.kattis.com/problems/autori
+	Open kattis problem Apaxiaaaaaaaaaaaans!: https://open.kattis.com/problems/apaxiaaans
 	Mahadi 02-12-17
 */
 
