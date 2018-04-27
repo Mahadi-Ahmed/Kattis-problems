@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <array>
+#include <string>
 
 
 int main(){
@@ -12,8 +13,10 @@ int main(){
     int i = 0;
     int setPiece = 0;
     //int boardSet [5];
-    std::array<int,5> boardSet;
+    std::array<int,6> boardSet;
     std::array<int,6> pieces = {1,1,2,2,2,8};
+    std::string rBoard = "";
+    int temp = 0;
 
     while(std::cin >> setPiece) {
         boardSet[i] = setPiece;
@@ -21,9 +24,11 @@ int main(){
     }
 
     for (int i = 0; i < 6; ++i) {
-        std::cout << pieces[i] - boardSet[i] << " ";
+        temp = pieces[i] - boardSet[i];
+        rBoard += std::to_string(temp);
+        rBoard += " ";
      }
- 
+    std::cout << rBoard;
     return 0;
 }
 
@@ -36,7 +41,9 @@ int main(){
     Two rooks
     Two bishops
     Two knights
-    Eight pawns
+    Eight pawns =>
+
+    1 1 2 2 2 7
 
     Example of input:
     0 1 2 2 2 7
