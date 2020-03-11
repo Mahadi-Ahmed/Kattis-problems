@@ -1,0 +1,103 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This file contains a very opinionated definition of what            %%
+%% an INDA hand-in should look like. It should load most, if not all,  %%
+%% packages needed to write a hand-in, and provides a few commands/    %%
+%% environments to make writing your hand-in easier.                   %%
+%%                                                                     %%
+%% Original author: Macaully James Muir (github.com/macaullyjamesmuir) %%
+%% Adapted from github.com/axelri/assignment_template_light            %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{cmap}
+\usepackage[inner=3cm,top=3cm,outer=2cm,bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish, english]{babel}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{lstautogobble}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%
+%% Front page %%
+%%%%%%%%%%%%%%%%
+\title{Unnamed assignment} %
+\author{Unnamed student}
+\date{\today}
+\setcounter{secnumdepth}{0}
+\AtBeginDocument{\maketitle \pagebreak} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Code environments %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+% Basic settings for displaying code
+\lstset{
+    basicstyle=\ttfamily,
+    title=\lstname,
+    showstringspaces=false,
+    fancyvrb=true,
+    extendedchars=true,
+    columns=flexible,
+    breaklines=true,
+    breakatwhitespace=true,
+    autogobble=true,
+    tabsize=2,
+    literate=
+        {ö}{{\"o}}1
+        {ä}{{\"a}}1
+        {å}{{\aa}}1
+        {Ö}{{\"O}}1
+        {Ä}{{\"A}}1
+        {Å}{{\AA}}1
+}
+
+% Pretty Java colors
+\definecolor{javared}{rgb}{0.6,0,0}            % For strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35}    % Comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35}      % Keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % Javadoc
+
+% Default code block environment
+\lstnewenvironment{code}%
+{
+    \lstset{xleftmargin=1cm}
+    \vspace{-0.5cm}
+}{}
+
+% Java code block environment. Same as above but with pretty colors.
+\lstnewenvironment{java}%
+{
+    \lstset{
+        language=Java,
+        keywordstyle=\color{javapurple}\bfseries,
+        stringstyle=\color{javared},
+        commentstyle=\color{javagreen},
+        morecomment=[s][\color{javadocblue}]{/**}{*/},
+        xleftmargin=1cm
+    }
+    \vspace{-0.5cm}
+}{}
+
+% Inline code (with shorthand)
+\newcommand{\inlinecode}[1]{\lstinline{#1}}
+\newcommand{\ic}[1]{\inlinecode{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Inda-specific commands/environments %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set the assignment number.
+\newcommand{\assignment}[1]{\title{Assignment #1}}
+
+% Start a new exercise.
+\newcommand{\exercise}[1]
+{
+    \setlength{\parindent}{0pt}
+    \section{Exercise #1}    
+}
+
+% Describe an exercise
+\newenvironment{exercise-description}%
+{\begin{bfseries}}%
+{\end{bfseries}\\}
