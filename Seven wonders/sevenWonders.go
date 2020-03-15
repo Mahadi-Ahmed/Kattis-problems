@@ -6,6 +6,7 @@ package main
 
 import "fmt"
 import "strings"
+import "math"
 
 func main() {
 	var cardHand string
@@ -16,11 +17,24 @@ func main() {
 		"C": 0,
 		"G": 0,
 	}
+
 	for i:=0; i < len(cards); i++ {
 		similarCards[cards[i]] += 1 
 	}
-	fmt.Println(cards)
-	fmt.Println(similarCards)
+	t := float64(similarCards["T"])
+	c := float64(similarCards["C"])
+	g := float64(similarCards["G"])
+
+	min := len(cards)
+
+	for _,i:= range similarCards {
+		if min > i {
+			min = i
+		}
+	}
+
+	score := math.Pow(t,2) + math.Pow(c,2) + math.Pow(g,2) + float64((min*7))
+	fmt.Println(score)
 }
 
 /*
